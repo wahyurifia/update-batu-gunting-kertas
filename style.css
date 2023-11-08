@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&family=Lakki+Reddy&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    position: relative;
+    background-image: url(img/bg-2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+
+section {
+    min-height: 100vh;
+    background-image: url(img/bg-1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.startGame {
+    position: absolute;
+    top: 50%;
+    right: 40%;
+    background-color: red;
+    padding: 30px 120px;
+    font-size:80px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 35px;
+    transition: .45s;
+    cursor: pointer;
+    font-family: 'Irish Grover';
+    color: yellow;
+}
+
+.startGame:hover {
+    box-shadow: 0 0 20px #000;
+}
+
+.tagLine {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 40%;
+    left: 7%;
+}
+
+.subTitle {
+    width: 100%;
+    text-align: center;
+}
+
+.lampElement {
+    position: absolute;
+    top: 0;
+}
+
+.scissorsElement {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.shapeElement {
+    position: absolute;
+    bottom: 0;
+}
+
+.watermark {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    font-size: 70px;
+    font-family: 'Lakki Reddy';
+    pointer-events: none;
+
+}
+
+.container {
+    max-width: 100%;
+    width: 110%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+.question {
+    width: 420px;
+}
+
+
+.playerPick {
+    display: inline-flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+
+.item {
+    font-size: 200px;
+    width: max-content;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffff;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.item:hover {
+    box-shadow: 0 0 20px #000;
+}
+
+.hilang {
+    display: none;
+    transition: all .25s ease-in;
+}
+
+.hasilAkhir {
+    font-size: 200px;
+}
