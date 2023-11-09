@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Altan</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cobaa.css">
 </head>
 <body>
 
-    <div class="container hilang">
+    <div class="container">
         <div class="playerPick">
           <!--   <img src="img/rock-item.png">
             <img src="img/scissors-item.png">
             <img src="img/paper-item.png"> -->
             <div class="rock item ">✊</div>
            <div class="paper item ">🖐️</div>
-            <div class="scissors item">✌️</div>
+            <div class="scissors item ">✌️</div>
         </div>
 
         <img src="img/VS.png">
@@ -24,7 +25,7 @@
         </div>
     </div>
         
-    <section>
+    <section class="hidden">
         <div class="subTitle">
             <svg width="1083" height="196" viewBox="0 0 1083 196" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g filter="url(#filter0_d_2_13)">
@@ -78,6 +79,20 @@
 
     </section>
 
+    <div class="final hidden">
+        <div class="boxModel">
+            <div id="container">
+                <div class="container-inner">
+                  <div class="content">
+                    <h1 id="result"></h1>
+                    <p>Do you want to Continue?</p>
+                  </div>
+                  <div class="buttons">
+                    <button type="button" class="confirm">Oke</button>
+                </div>
+            </div>
+         </div>
+    </div>
 
 
     <script src="main.js"></script>
