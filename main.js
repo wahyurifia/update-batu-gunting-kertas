@@ -1,10 +1,10 @@
 const startGame = document.querySelector('.startGame');
-const container = document.querySelector(".container");
-const section =  document.querySelector("section");
+const main = document.getElementById("main")
+const cover =  document.getElementById("cover")
 startGame.addEventListener("click", () => {
     startGame.classList.toggle("hidden");
-    container.classList.toggle("hilang");
-    section.classList.toggle("hidden");
+    main.classList.toggle("hilang");
+    cover.classList.toggle("hidden");
 }) 
 
 function getcomputerPicked() {
@@ -26,7 +26,13 @@ function getResult(comp, player) {
 const once = function() {
     if(once.done) return;
 
-    question = document.querySelector(".question").style.display = 'none';
+    question = document.querySelector(".question").remove();
+    const compBox =  document.querySelector('.computerPickBox')
+    cc = document.createElement("div");
+    compBox.appendChild(cc);
+    cc.classList = 'item';
+
+    // console.log(compBox);
     once.done = true;
 };
 
@@ -39,47 +45,61 @@ function putar() {
             clearInterval;
             return;
         }
-        computerPick.innerHTML = gambar[i++];
+        cc.innerHTML = gambar[i++];
         if ( i == gambar.length ) i = 0;
     }, 100);
 };
 
-
 const computerPick = document.querySelector('.computerPick');
 const resultDisplay =  document.getElementById('result')
 const pilihan = document.querySelectorAll('.playerPick div');
-pilihan.forEach(function(pil) {
-    pil.addEventListener('click', function() {
-
-    if (this == pilihan[0]) {
-        pilihan[1].classList = 'hilang';
-        pilihan[2].classList = 'hilang';
-    }else if(this == pilihan[1]) {
-        pilihan[0].classList = 'hilang';
-        pilihan[2].classList = 'hilang';
-    }else if (this == pilihan[2]) {
-        pilihan[0].classList = 'hilang';
-        pilihan[1].classList = 'hilang';
-    }
-
-    const computerPicked = getcomputerPicked();
-    // console.log(computerPicked);
-    const playerPicked = pil.innerHTML;
-    const result = getResult(computerPicked, playerPicked);
-    console.log(result);
-
-    once();
-    putar();
-
-    computerPick.classList = 'item';
-
-    setTimeout(function() {
-        computerPick.innerHTML = computerPicked;
-        resultDisplay.innerHTML = result;
-    },1500)
+    pilihan.forEach(function(pil) {
+        pil.addEventListener('click', function() {
     
-   
+        if (this == pilihan[0]) {
+            pilihan[1].classList = 'paper item hilang';
+            pilihan[2].classList = 'scissors item hilang';
+        }else if(this == pilihan[1]) {
+            pilihan[0].classList = 'rock item hilang';
+            pilihan[2].classList = 'scissors item hilang';
+        }else if (this == pilihan[2]) {
+            pilihan[0].classList = 'rock item hilang';
+            pilihan[1].classList = 'paper item hilang';
+        }
+    
+        const computerPicked = getcomputerPicked();
+        const playerPicked = pil.innerHTML;
+        const result = getResult(computerPicked, playerPicked);
+        // console.log(result);
+    
+        once();
+        // console.log(cc);
+        putar();
+    
+        setTimeout(function() {
+            cc.innerHTML = computerPicked;
+            // console.log(computerPicked);
+            resultDisplay.innerHTML = result;
+    
+            setTimeout(finalPopUp, 500)
+    
+        },1500)
+        console.log(pilihan);
         
-        
+        });
     });
+
+
+const confirm = document.getElementById('confirm');
+confirm.addEventListener('click', function() {
+    document.getElementById('final').style.display = 'none';
+    console.log(pilihan[0]);
+    pilihan[0].classList.remove('hilang');
+    pilihan[1].classList.remove('hilang');
+    pilihan[2].classList.remove('hilang');
 });
+
+
+function finalPopUp() {
+    document.getElementById('final').style.display = 'block';
+}

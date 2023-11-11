@@ -9,7 +9,7 @@
 body {
     height: 100vh;
     position: relative;
-    background-image: url(img/bg-2.png);
+    background: url(img/bg-2.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -17,23 +17,74 @@ body {
 }
 
 
-section {
+#cover {
+    position: absolute;
+    top: 0;
+    left: 0;
     min-height: 100vh;
     background-image: url(img/bg-1.png);
+    background-color: #fff;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
 }
 
-
 .hidden {
     display: none;
 }
 
+.container {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.coverTop {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2%;
+
+}
+
+.coverCenter {
+    display: flex;
+    flex-direction: column;
+    margin-left: 7%;
+    
+}
+
+.coverBottom {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.shapeElement {
+    position: absolute;
+    bottom: 0;
+}
+
+.watermark {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    font-size: 70px;
+    font-family: 'Lakki Reddy';
+    pointer-events: none;
+    z-index: 1;
+}
+
 .startGame {
+    display: inline;
     position: absolute;
     top: 50%;
-    right: 40%;
+    left: 50%;
+    transform: Translate(-50%, -50%);
     background-color: red;
     padding: 30px 120px;
     font-size:80px;
@@ -50,55 +101,57 @@ section {
     box-shadow: 0 0 20px #000;
 }
 
-.tagLine {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    top: 40%;
-    left: 7%;
-}
-
-.subTitle {
-    width: 100%;
-    text-align: center;
-}
-
-.lampElement {
-    position: absolute;
-    top: 0;
-}
-
-.scissorsElement {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-}
-
-.shapeElement {
-    position: absolute;
-    bottom: 0;
-}
-
-.watermark {
-    position: absolute;
-    bottom: 0;
-    left: 20px;
-    font-size: 70px;
-    font-family: 'Lakki Reddy';
-    pointer-events: none;
-
-}
-
-.container {
-    max-width: 100%;
-    width: 110%;
+#main {
     height: 100vh;
+    padding: 0 5%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    
 }
 
+.containerMain {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.playerPick {
+    width: 500px;
+    height: 100%;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.item {
+    display: inline;
+    width: max-content;
+    font-size: 20vh;
+
+    background-color: #ffff;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.computerPick {
+    width: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.computerPickBox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.question {
+    width: 100%;
+}
+
+/*
 .question {
     width: 420px;
 }
@@ -127,17 +180,18 @@ section {
     box-shadow: 0 0 20px #000;
 }
 
+
+
+.hasilAkhir {
+    font-size: 200px;
+} */
 .hilang {
     display: none;
     transition: all .25s ease-in;
 }
 
-.hasilAkhir {
-    font-size: 200px;
-}
-
-
-.final {
+#final {
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
