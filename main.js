@@ -2,10 +2,10 @@ const startGame = document.querySelector('.startGame');
 const main = document.getElementById("main")
 const cover =  document.getElementById("cover")
 startGame.addEventListener("click", () => {
-    startGame.classList.toggle("hidden");
+    startGame.classList.toggle("hilang");
     main.classList.toggle("hilang");
-    cover.classList.toggle("hidden");
-}) 
+    cover.classList.toggle("hilang");
+});
 
 function getcomputerPicked() {
     const comp = Math.random();
